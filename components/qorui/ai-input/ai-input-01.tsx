@@ -4,10 +4,10 @@ import { CornerRightUp, Mic } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
-import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
+import { useAutoResizeTextArea } from "@/hooks/use-auto-resize-textarea";
 
 export default function AIInput_01() {
-  const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+  const { textareaRef, adjustHeight } = useAutoResizeTextArea({
     minHeight: 52,
     maxHeight: 200,
   });
@@ -61,6 +61,7 @@ export default function AIInput_01() {
         <button
           onClick={handleReset}
           type="button"
+          aria-label="Submit"
           className={cn(
             "absolute top-1/2 -translate-y-1/2 rounded-xl bg-black/5 dark:bg-white/5 py-1 px-1 transition-all duration-700",
             inputValue

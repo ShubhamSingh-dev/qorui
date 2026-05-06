@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
+import { RootProvider } from "fumadocs-ui/provider/next";
 import { ViewTransitions } from "next-view-transitions";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html
+      suppressHydrationWarning
         lang="en"
         className={cn(
           "h-full",
@@ -40,7 +42,9 @@ export default function RootLayout({
           inter.variable,
         )}
       >
-        <body className="min-h-full flex flex-col">{children}</body>
+        <body className="min-h-full flex flex-col">
+          <RootProvider>{children}</RootProvider>
+        </body>
       </html>
     </ViewTransitions>
   );
