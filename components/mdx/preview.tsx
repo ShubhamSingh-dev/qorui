@@ -15,7 +15,7 @@ interface PreviewProps {
 
 const prePath = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "https://ui.codesnipet.com";
+  : "https://ui.codesnippetdev.com";
 
 export function Preview({
   children,
@@ -29,7 +29,7 @@ export function Preview({
   console.log(prePath + link);
   return (
     <>
-      <div className={cn("w-full overflow-hidden", className)}>
+      <div className={cn("w-full  overflow-hidden", className)}>
         <PreviewContent link={link} prePath={prePath} isBlock={isBlock} />
 
         {useIframe ? (
