@@ -15,16 +15,4 @@ export const baseOptions: BaseLayoutProps = {
       </div>
     ),
   },
-  links: [
-    {
-      text: "Pricing",
-      url: "/pricing",
-    },
-
-    {
-      type: "custom",
-      on: "nav",
-      children: <HeaderPro />,
-    },
-  ],
 };
