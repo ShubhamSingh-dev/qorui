@@ -13,9 +13,8 @@ interface PreviewProps {
   isBlock?: boolean;
 }
 
-const prePath = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "https://ui.codesnippetdev.com";
+const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.NEXT_PUBLIC_SITE_URL || "localhost:3000";
+const prePath = baseUrl.startsWith("http") ? baseUrl : `https://${baseUrl}`;
 
 export function Preview({
   children,
