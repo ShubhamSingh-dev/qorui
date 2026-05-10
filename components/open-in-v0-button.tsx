@@ -1,38 +1,31 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-// Determine the correct URL based on environment
-let prePath: string | null = null;
-
-// In production (Vercel)
-if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-  prePath = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
-}
-// In preview deployments (Vercel)
-else if (process.env.VERCEL_URL) {
-  prePath = `https://${process.env.VERCEL_URL}`;
-}
-// Only use NEXT_PUBLIC_SITE_URL if it's not localhost
-else if (process.env.NEXT_PUBLIC_SITE_URL && !process.env.NEXT_PUBLIC_SITE_URL.includes("localhost")) {
-  prePath = process.env.NEXT_PUBLIC_SITE_URL;
-}
-
-const isLocalhost = !prePath;
+import { useEffect, useState } from "react";
 
 export function OpenInV0Button({
     name,
     className,
 }: { name: string } & React.ComponentProps<typeof Button>) {
-    if (isLocalhost) {
+    const [prePath, setPrePath] = useState<string>("");
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+        setPrePath(window.location.origin);
+    }, []);
+
+    if (!isMounted) {
+        // Render a disabled skeleton during SSR to prevent hydration mismatch
         return (
             <Button
-                aria-label="Open in v0 - not available locally"
+                aria-label="Loading..."
                 className={cn(
                     "h-7 gap-1 rounded-lg shadow-none bg-gray-400 px-3 text-xs text-white cursor-not-allowed opacity-50 dark:bg-gray-600 transition-colors duration-200 not-prose",
                     className
                 )}
                 disabled
-                title="V0 requires a public URL. Deploy your project to use this feature."
             >
                 Open in{" "}
                 <svg
