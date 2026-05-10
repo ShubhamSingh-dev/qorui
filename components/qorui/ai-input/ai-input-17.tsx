@@ -3,12 +3,13 @@
 import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
-import { ArrowUpCircle, Paperclip, Globe, Figma } from "lucide-react";
+import { useAutoResizeTextArea } from "@/hooks/use-auto-resize-textarea";
+import { ArrowUpCircle, Paperclip, Globe } from "lucide-react";
+import { Figma } from "@/components/qorui/icons";
 
 export default function AIInput_17() {
     const [value, setValue] = useState("");
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textareaRef, adjustHeight } = useAutoResizeTextArea({
         minHeight: 80,
         maxHeight: 200,
     });

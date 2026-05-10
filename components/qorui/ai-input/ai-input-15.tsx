@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
+import { useAutoResizeTextArea } from "@/hooks/use-auto-resize-textarea";
 
 interface ToolbarButton {
     icon: LucideIcon;
@@ -23,7 +23,7 @@ interface ToolbarButton {
 
 export default function AIInput_15() {
     const [value, setValue] = useState("");
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textareaRef, adjustHeight } = useAutoResizeTextArea({
         minHeight: 96,
         maxHeight: 300,
     });

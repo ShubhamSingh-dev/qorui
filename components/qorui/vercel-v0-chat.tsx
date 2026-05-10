@@ -3,21 +3,21 @@
 import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
+import { useAutoResizeTextArea } from "@/hooks/use-auto-resize-textarea";
 import {
     ImageIcon,
     FileUp,
-    Figma,
     MonitorIcon,
     CircleUserRound,
     ArrowUpIcon,
     Paperclip,
     PlusIcon,
 } from "lucide-react";
+import { Figma } from "@/components/qorui/icons";
 
 export function VercelV0Chat() {
     const [value, setValue] = useState("");
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textareaRef, adjustHeight } = useAutoResizeTextArea({
         minHeight: 60,
         maxHeight: 200,
     });

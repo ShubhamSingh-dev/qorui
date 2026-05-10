@@ -9,7 +9,7 @@ import {
 import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
+import { useAutoResizeTextArea } from "@/hooks/use-auto-resize-textarea";
 
 const ITEMS = [
     {
@@ -46,7 +46,7 @@ export default function AIInput_03() {
     const [selectedItem, setSelectedItem] = useState<string | null>(
         "Make shorter"
     );
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textareaRef, adjustHeight } = useAutoResizeTextArea({
         minHeight: 52,
         maxHeight: 200,
     });

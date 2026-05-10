@@ -1,73 +1,11 @@
 ---
 title: Action Search Bar
-description: A modern animated command palette with categories, keyboard navigation, and smart search.
+description: Checkout Interaction with NumberFlow animations.
 icon: Command
 ---
 
 import ActionSearchBar from "@/components/qorui/action-search-bar";
-import { Preview } from "@/components/mdx/preview";
 
-### 1. Preview
-
-<Preview
-  link="action-search-bar"
-  comment={[
-    "Animated interactions",
-    "Keyboard navigation",
-    "Category filtering",
-    "Command palette UX",
-  ]}
->
-  <ActionSearchBar />
+<Preview link="action-search-bar" comment={["Motion"]}>
+    <ActionSearchBar />
 </Preview>
-
-### 2. Installation
-
-<Tabs items={["bun", "npx", "pnpm"]}>
- 
-```bash tab="bun"
-bunx shadcn@latest add https://codesnippetui.dev/action-search-bar.json
-```
- 
-```bash tab="npx"
-npx shadcn@latest add https://codesnippetui.dev/action-search-bar.json
-```
-
-```bash tab="pnpm"
-pnpm dlx shadcn@latest add https://codesnippetui.dev/action-search-bar.json
-```
-
-</Tabs>
-
-### 3. Usage
-
-```tsx
-import ActionSearchBar from "@/components/qorui/action-search-bar"
-
-export default function Example() {
-  return <ActionSearchBar />
-}
-```
-
-### 4. Features
-
-- ⌘ `Cmd + K` shortcut support
-- Keyboard navigation
-- Animated command palette
-- Category filtering
-- Recent & suggested actions
-- Responsive layout
-
-### 5. Props
-
-| Prop | Type | Default |
-| --- | --- | --- |
-| `defaultOpen` | `boolean` | `false` |
-| `className` | `string` | `undefined` |
-
-### 6. Accessibility
-
-- Keyboard-first navigation
-- Focus management
-- Semantic interactions
-- Accessible command palette UX

@@ -3,7 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { Twitter, Facebook, Linkedin, Link } from "lucide-react";
+import { Link } from "lucide-react";
+import { Twitter, Facebook, Linkedin } from "@/components/qorui/icons";
 
 export default function Btn08({
     className,
@@ -61,7 +62,7 @@ export default function Btn08({
                             "transform",
                             isHovered
                                 ? "translate-x-[0%] opacity-100"
-                                : "translate-x-[-100%] opacity-0",
+                                : "translate-x-full opacity-0",
                             index === 0 && "transition-all duration-200",
                             index === 1 &&
                                 "transition-all duration-200 delay-[50ms]",

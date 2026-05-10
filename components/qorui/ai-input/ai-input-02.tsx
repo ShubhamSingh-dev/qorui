@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { useFileInput } from "@/hooks/use-file-input";
-import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
+import { useAutoResizeTextArea } from "@/hooks/use-auto-resize-textarea";
 
 interface FileDisplayProps {
     fileName: string;
@@ -31,7 +31,7 @@ export default function AIInput_02() {
     const { fileName, fileInputRef, handleFileSelect, clearFile } =
         useFileInput({ accept: "image/*", maxSize: 5 });
 
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textareaRef, adjustHeight } = useAutoResizeTextArea({
         minHeight: 52,
         maxHeight: 200,
     });

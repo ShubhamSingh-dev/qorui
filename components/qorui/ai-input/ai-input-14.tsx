@@ -4,7 +4,7 @@ import { ArrowRight, Brain } from "lucide-react";
 import { useRef, useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
+import { useAutoResizeTextArea } from "@/hooks/use-auto-resize-textarea";
 
 interface ToggleButtonProps {
     icon: React.ReactNode;
@@ -53,7 +53,7 @@ function ToggleButton({ icon, label, isActive, onClick }: ToggleButtonProps) {
 export default function AIInput_14() {
     const [value, setValue] = useState("");
     const [useMemory, setUseMemory] = useState(false);
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textareaRef, adjustHeight } = useAutoResizeTextArea({
         minHeight: 40,
         maxHeight: 200,
     });

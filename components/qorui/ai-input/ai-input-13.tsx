@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
+import { useAutoResizeTextArea } from "@/hooks/use-auto-resize-textarea";
 
 interface SidebarSection {
     title: string;
@@ -15,7 +15,7 @@ interface SidebarSection {
 
 export default function AIInput_13() {
     const [value, setValue] = useState("");
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textareaRef, adjustHeight } = useAutoResizeTextArea({
         minHeight: 40,
         maxHeight: 200,
     });

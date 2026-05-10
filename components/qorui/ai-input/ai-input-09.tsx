@@ -4,7 +4,7 @@ import { Plus, Mic, File, Camera, X, ArrowRight } from "lucide-react";
 import { useState, useRef, type RefObject } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
+import { useAutoResizeTextArea } from "@/hooks/use-auto-resize-textarea";
 import { useFileInput } from "@/hooks/use-file-input";
 import { useClickOutside } from "@/hooks/use-click-outside";
 
@@ -30,7 +30,7 @@ const FileDisplay = ({ fileName, onClear }: FileDisplayProps) => (
 export default function AIInput_09() {
     const [inputValue, setInputValue] = useState<string>("");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textareaRef, adjustHeight } = useAutoResizeTextArea({
         minHeight: 56,
         maxHeight: 200,
     });

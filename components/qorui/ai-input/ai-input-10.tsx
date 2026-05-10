@@ -14,7 +14,7 @@ import {
 import { useState, useRef, useCallback, type RefObject } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
+import { useAutoResizeTextArea } from "@/hooks/use-auto-resize-textarea";
 import { useFileInput } from "@/hooks/use-file-input";
 import { useClickOutside } from "@/hooks/use-click-outside";
 
@@ -56,7 +56,7 @@ export default function AIInput_10() {
         isModelMenuOpen: false,
     });
 
-    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+    const { textareaRef, adjustHeight } = useAutoResizeTextArea({
         minHeight: 40,
         maxHeight: 200,
     });

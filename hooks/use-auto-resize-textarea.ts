@@ -1,7 +1,7 @@
 
 import { useEffect, useRef, useCallback } from "react";
 
-interface UseAutoResizeTextAreaProps {
+interface useAutoResizeTextAreaProps {
     minHeight: number;
     maxHeight?: number;
 }
@@ -9,7 +9,7 @@ interface UseAutoResizeTextAreaProps {
 export function useAutoResizeTextArea({
     minHeight,
     maxHeight,
-}: UseAutoResizeTextAreaProps) {
+}: useAutoResizeTextAreaProps) {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
     const adjustHeight = useCallback(
