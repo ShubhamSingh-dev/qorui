@@ -13,9 +13,10 @@ interface PreviewProps {
   isBlock?: boolean;
 }
 
-const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.NEXT_PUBLIC_SITE_URL || "localhost:3000";
-const prePath = baseUrl.startsWith("http") ? baseUrl : `https://${baseUrl}`;
-
+const prePath = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : process.env.NEXT_PUBLIC_SITE_URL 
+    ?? "http://localhost:3000";
 
 export function Preview({
   children,
@@ -26,7 +27,7 @@ export function Preview({
   comment = [],
   isBlock = false,
 }: PreviewProps) {
-  console.log(prePath + link);
+  console.log(`${prePath}/${link}`);
   return (
     <>
       <div className={cn("w-full  overflow-hidden", className)}>
