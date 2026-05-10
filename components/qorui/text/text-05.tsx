@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
+import type { Variants } from "motion/react";
 
 interface BouncingTextProps {
     text?: string;
@@ -16,7 +17,7 @@ export default function Text_05({
     delay = 0.1,
     bouncingIndices = [0, 2, 5],
 }: BouncingTextProps) {
-    const letterAnimation = {
+    const letterAnimation: Variants = {
         initial: { y: 0 },
         animate: {
             y: [-8, 0],

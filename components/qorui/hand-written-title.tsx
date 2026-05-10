@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import type { Variants } from "motion/react";
 interface HandWrittenTitleProps {
   title?: string;
   subtitle?: string;
@@ -10,7 +11,7 @@ export default function HandWrittenTitle({
   title = "Hand Written",
   subtitle = "Optional subtitle",
 }: HandWrittenTitleProps) {
-  const draw = {
+  const draw: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: {
       pathLength: 1,

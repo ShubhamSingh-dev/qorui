@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import { motion, AnimatePresence } from "motion/react"
+import type { Variants } from "motion/react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, RefreshCw, Copy, Check } from "lucide-react"
@@ -12,7 +13,7 @@ interface CheckmarkProps {
   className?: string
 }
 
-const draw = {
+const draw: Variants = {
   hidden: { pathLength: 0, opacity: 0 },
   visible: (i: number) => ({
     pathLength: 1,
@@ -23,7 +24,6 @@ const draw = {
         type: "spring",
         duration: 1.5,
         bounce: 0.2,
-        ease: "easeInOut",
       },
       opacity: { delay: i * 0.2, duration: 0.2 },
     },
