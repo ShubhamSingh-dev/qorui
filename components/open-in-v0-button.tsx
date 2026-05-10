@@ -1,11 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const prePath = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : process.env.NEXT_PUBLIC_SITE_URL && !process.env.NEXT_PUBLIC_SITE_URL.includes("localhost")
-    ? process.env.NEXT_PUBLIC_SITE_URL
-    : null;
+// Determine the correct URL based on environment
+let prePath: string | null = null;
+
+// In production (Vercel)
+if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+  prePath = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+}
+// In preview deployments (Vercel)
+else if (process.env.VERCEL_URL) {
+  prePath = `https://${process.env.VERCEL_URL}`;
+}
+// Only use NEXT_PUBLIC_SITE_URL if it's not localhost
+else if (process.env.NEXT_PUBLIC_SITE_URL && !process.env.NEXT_PUBLIC_SITE_URL.includes("localhost")) {
+  prePath = process.env.NEXT_PUBLIC_SITE_URL;
+}
 
 const isLocalhost = !prePath;
 
